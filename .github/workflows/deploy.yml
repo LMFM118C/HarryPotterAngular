@@ -1,0 +1,46 @@
+name: Deploy Angular
+
+on:
+  push:
+    branches:
+      -main
+
+permissions:
+  contents: read
+  page: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - run: npm run build -- --configuration production --base-href /EV_APIANGULAR/
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist/EV_APIANGULAR/browser
+
+  deploy:
+
+    needs: build
+
+    runs-on: ubunto-latest
+
+    environment:
+      name: github-pages
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+    
+      - uses: actions/deploy-pages@v5
