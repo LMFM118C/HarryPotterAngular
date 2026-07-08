@@ -25,7 +25,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -- --configuration production --base-href /EV_APIANGULAR/
+      - run: npm run build -- --configuration=production --base-href=/EV_APIANGULAR/
 
       - uses: actions/upload-pages-artifact@v5
         with:
@@ -47,5 +47,4 @@ jobs:
     steps:
     
       - uses: actions/deploy-pages@v5
-
-      
+   
