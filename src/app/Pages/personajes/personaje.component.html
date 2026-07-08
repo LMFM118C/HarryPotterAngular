@@ -1,0 +1,22 @@
+<div class="header">
+    <h1>HOGWARTS API</h1>
+    <p>Enciclopedia de personajes de la franquicia Harry Potter&trade;</p>
+</div>
+<div class="contenedor">
+    @for(p of personajes(); track p.id){
+        <div class="tarjetas">
+            <div class="info">
+                <img [src]="p.image" alt="NotFound">
+                <strong class="nombre">{{ p.name }}</strong>
+                <span>Casa: {{ p.house }}</span>
+                @if(p.alive === true){
+                    <span>Estado: <span class="vivo">Vivo</span></span>
+                }@else {
+                    <span>Estado: <span class="muerto">Muerto</span></span>
+                }
+                <span>Actor: {{ p.actor }}</span>
+
+            </div>
+        </div>
+    }
+</div>

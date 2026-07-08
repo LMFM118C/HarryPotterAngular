@@ -1,0 +1,93 @@
+.header{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0px;
+    color: #cca43b;
+    background: #242f40;
+    border-bottom: 4px solid #cca43b;
+    border-top: 2px solid #cca43b;
+}
+
+.header h1{
+    text-shadow: 3px 3px #685320;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+.header p{
+    text-shadow: 1.4px 1.4px #685320;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: auto;
+    background: #19202b;
+}
+
+.tarjetas img{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background-color: #48525f;
+    border-bottom: 1px solid #cca43b;
+}
+
+.info{
+    background-color: #282e35;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 8px;
+    color: aliceblue;
+    box-shadow: 0px 4px #cca43b;
+}
+
+.info:hover{
+    box-shadow: 0px 4px 8px #e6b742;
+    transition: 0.2s;
+}
+
+.nombre{
+    font-size: 1.4em;
+    padding-top: 6px;
+}
+
+.vivo{
+    background: rgb(75, 107, 68);
+    padding: 0px 6px;
+    border-radius: 4px;
+}
+
+.muerto{
+    background: rgb(87, 56, 56);
+    padding: 0px 6px;
+    border-radius: 4px;
+}
+
+@media (max-width: 400px){
+    .contenedor{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .info img{
+        height: fit-content;
+    }
+
+    .nombre{
+        font-size: 1em;
+    }
+
+}
